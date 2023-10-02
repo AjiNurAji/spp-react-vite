@@ -3,10 +3,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './pages/Login'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Dashboard from './pages/admin/Dashboard'
-import DashboardPetugas from './pages/petugas/DashboardPetugas'
-import DashboardSiswa from './pages/siswa/DashboardSiswa'
-import Loader from './components/Loader'
+import Dashboard from './pages/Dashboard'
+import PdfCreated from './components/PdfCreated'
 
 function App() {
   const router = createBrowserRouter([
@@ -15,20 +13,12 @@ function App() {
       element: <Login />
     },
     {
-      path: '/admin',
-      element: <Dashboard />
-    }, 
-    {
-      path: '/petugas',
-      element: <DashboardPetugas />
-    },
-    {
       path: '/dashboard',
-      element: <DashboardSiswa />
+      element: <Dashboard />
     },
     {
       path: '/t',
-      element: <Loader />
+      element: <PdfCreated />
     }
   ])
 

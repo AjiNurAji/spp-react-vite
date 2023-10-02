@@ -60,10 +60,10 @@ function Login() {
           toast.success('Berhasil login')
           if(data.level === 'admin') {
             localStorage.setItem('role', 'admin')
-            navigate('/admin')
+            navigate('/dashboard')
           } else {
             localStorage.setItem('role', 'petugas')
-            navigate('/petugas')
+            navigate('/dashboard')
           }
         } else {
           toast.error('Terjadi kesalahan mohon cek kembali username atau password anda!')
@@ -99,11 +99,8 @@ function Login() {
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       setLoader(false)  
-    } else if (localStorage.getItem('role') === 'admin') {
-      navigate('/admin')
-    } else if (localStorage.getItem('role') === 'petugas') {
-      navigate('/petugas')
-    } else if (localStorage.getItem('role') === 'siswa') {
+    } else {
+      toast.warning('Anda sudah login!')
       navigate('/dashboard')
     }
   }, [])

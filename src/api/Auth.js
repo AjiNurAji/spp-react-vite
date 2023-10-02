@@ -25,3 +25,19 @@ export const loginSiswa = async ({ nisn, nis }) => {
     return error
   }
 }
+
+export const handleMe = async (token) => {
+  try {
+    const data = await axios.post(`${URL}/api/auth/me`, {}, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    return data;
+  } catch (error) {
+    return error
+  }
+}
