@@ -25,6 +25,10 @@ function Dashboard() {
         setLoader(false)
       } else {
         toast.warning('Terjadi kesalahan, silahkan coba lagi!')
+        setLoader(false)
+        navigate('/')
+        localStorage.removeItem('token')
+        localStorage.removeItem('role')
       }
     }
   }

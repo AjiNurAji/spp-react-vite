@@ -39,17 +39,17 @@ function Login() {
     e.preventDefault();
     setLoading(true)
     if(role) {
-      if (data.level === undefined || !data.level) {
-        toast.warning('Mohon pilih level!')
-        document.getElementById('level').focus()
-        setLoading(false)
-      } else if (data.username === undefined) {
+      if (data.username === undefined) {
         toast.warning('Mohon isi username!')
         document.getElementById('username').focus()
         setLoading(false)
       } else if (data.password === undefined) {
         toast.warning('Mohon isi password!')
         document.getElementById('password').focus()
+        setLoading(false)
+      } else if (data.level === undefined || !data.level) {
+        toast.warning('Mohon pilih level!')
+        document.getElementById('level').focus()
         setLoading(false)
       } else {
         const dataLogin = await loginAdminPetugas(data);

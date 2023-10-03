@@ -4,7 +4,7 @@ import Login from './pages/Login'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './pages/Dashboard'
-import PdfCreated from './components/PdfCreated'
+import Sidebar from './components/Sidebar'
 
 function App() {
   const router = createBrowserRouter([
@@ -13,12 +13,12 @@ function App() {
       element: <Login />
     },
     {
-      path: '/dashboard',
+      path: 'dashboard/*',
       element: <Dashboard />
     },
     {
       path: '/t',
-      element: <PdfCreated />
+      element: <Sidebar />
     }
   ])
 
