@@ -4,7 +4,9 @@ import Login from './pages/Login'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './pages/Dashboard'
-import Sidebar from './components/Sidebar'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+config.autoAddCss = false
 
 function App() {
   const router = createBrowserRouter([
@@ -15,16 +17,12 @@ function App() {
     {
       path: 'dashboard/*',
       element: <Dashboard />
-    },
-    {
-      path: '/t',
-      element: <Sidebar />
     }
   ])
 
   return (
     <>
-      <ToastContainer position='bottom-right' pauseOnHover={false} />
+      <ToastContainer position='bottom-right' pauseOnHover={false}/>
       <RouterProvider router={router}></RouterProvider>
     </>
   )

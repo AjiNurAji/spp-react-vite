@@ -41,3 +41,35 @@ export const handleMe = async (token) => {
     return error
   }
 }
+
+export const logout = async (token) => {
+  try {
+    const data = await axios.post(`${URL}/api/auth/logout`, {}, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    return data;
+  } catch (error) {
+    return error
+  }
+}
+
+export const logoutSiswa = async (token) => {
+  try {
+    const data = await axios.post(`${URL}/api/auth/logout-siswa`, {}, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    return data;
+  } catch (error) {
+    return error
+  }
+}
